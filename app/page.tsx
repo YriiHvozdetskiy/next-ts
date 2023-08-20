@@ -5,7 +5,7 @@ import {Button} from "@/components/ui/button";
 export default function HomePage() {
    return (
       <>
-         <section>
+         <section className={'container'}>
             HomePage
             {/*якщо потрібна силка asChild*/}
             <Button asChild>
