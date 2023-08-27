@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -25,7 +25,7 @@ const formSchema = z.object({
    name: z.string().min(1, 'Name is required'),
 })
 
-export const FormCustom: FC<Props> = () => {
+export const FormCustom = ({}: Props) => {
    const [isOpen, onOpen, onClose] = useModalStore((state) => [state.isOpen, state.onOpen, state.onClose]);
    // fix hydration error
    const [isMounted, setIsMounted] = useState(false);

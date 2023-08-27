@@ -1,4 +1,4 @@
-import {FC, ReactNode} from 'react';
+import {ReactNode} from 'react';
 
 import {Dialog, DialogContent} from "@/components/ui/dialog";
 
@@ -9,13 +9,13 @@ interface Props {
    contentStyle?: string
 }
 
-export const Modal: FC<Props> = (
+export const Modal = (
    {
       children,
       isOpen,
       onClose,
       contentStyle,
-   }) => {
+   }: Props) => {
 
    const onChange = (isOpen: boolean) => {
       if (!isOpen) {

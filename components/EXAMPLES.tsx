@@ -1,6 +1,6 @@
 'use client';
 
-import {FC, useState} from 'react';
+import {useState} from 'react';
 
 import {Button} from "@/components/ui/button";
 import {FormCustom} from "@/components/FormCustom";
@@ -23,9 +23,7 @@ type Action =
    | { type: 'decrement' };
 
 
-// props in function declaration
-// export function EXAMPLES(props: Props) {}
-export const EXAMPLES: FC<Props> = ({title}) => {
+export const EXAMPLES = ({title}: Props) => {
    //в стейті може бути тільки ці значення
    const [user, setUser] = useState<Pick<User, 'name' | 'email'>>({name: 'John', email: 'gmail'});
 
