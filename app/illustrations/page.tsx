@@ -10,7 +10,7 @@ export default async function IllustrationsPage() {
 
    return (
       <div className={'container'}>
-         <Link href={'/illustrations/1'}>link</Link>
+         <Link href={'/illustrations/1'}>link to illustration details page</Link>
       </div>
    )
 }
