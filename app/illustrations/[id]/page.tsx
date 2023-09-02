@@ -1,53 +1,43 @@
 import Image from "next/image";
-
-// export const dynamicParams = true
-//
-// export async function generateStaticParams() {
-//    const res = await fetch(ILLUSTRATIONS())
-//
-//    const {data} = await res.json()
-//
-//    return data.map((element) => ({
-//       id: element.id.toString()
-//    }))
-// }
-
-// export async function generateMetadata({params}) {
-//    const id = params.id
-//
-//    // const res = await fetch(ILLUSTRATIONS(id))
-//    //
-//    // const data = await res.json()
-//    //
-//    // if (!res.ok) {
-//    //    notFound()
-//    // }
-//
-//    // return {
-//    //    title: `SciePro | ${data?.title}`,
-//    //    description: `${data?.short_description}`,
-//    // }
-//
-//    try {
-//       const {data} = await axios.get(ILLUSTRATIONS(id))
-//
-//       return {
-//          title: `SciePro | ${data?.title}`,
-//          description: `${data?.short_description}`,
-//       }
-//    } catch (error) {
-//       notFound()
-//    }
-// }
-
 import {notFound} from "next/navigation";
+import axios from "axios";
+
+export async function generateMetadata({params}: { params: { id: string } }) {
+   const id = params.id
+
+   const res = await fetch(`https://api.sciepro.sheep.fish/api/illustrations/${id}`)
+
+   const data = await res.json()
+
+   if (!res.ok) {
+      notFound()
+   }
+
+   return {
+      title: `SciePro | ${data?.data?.illustration?.title}`,
+      description: `${data?.data?.illustration?.short_description}`,
+   }
+
+   /* ======= with axios ======= */
+   // try {
+   //    const {data} = await axios.get(`https://api.sciepro.sheep.fish/api/illustrations/${id}`)
+   //   
+   //    return {
+   //       title: `SciePro | ${data?.data?.illustration?.title}`,
+   //       description: `${data?.short_description}`,
+   //    }
+   // } catch (error) {
+   //    notFound()
+   // }
+}
+
 
 async function getIllustration(id: string) {
    const res = await fetch(`https://api.sciepro.sheep.fish/api/illustrations/${id}`, {
-      // cache: 'no-store'
-      next: {
-         revalidate: 0
-      }
+      cache: 'no-store'
+      // next: {
+      //    revalidate: 0
+      // }
    })
 
    if (!res.ok) {
@@ -62,7 +52,6 @@ export default async function IllustrationDetails({params}: { params: { id: stri
    const id = params.id
    const response = await getIllustration(id)
    const data = response?.data?.illustration;
-   // console.log('data getIllustration', data)
 
    return (
       <div className={'container'}>
