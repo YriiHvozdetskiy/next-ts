@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -8,7 +8,7 @@ export default function AboutPage() {
             AboutPage
             {/*якщо потрібна силка asChild*/}
             <Button asChild variant={'destructive'}>
-               <Link href="/">Home</Link>
+               <Link href="/">link to Home</Link>
             </Button>
          </section>
       </>

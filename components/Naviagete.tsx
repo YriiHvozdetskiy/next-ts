@@ -3,7 +3,7 @@
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 
-import {navRoutes} from "@/utils/routes";
+import {navRoutes} from "@/constants";
 
 export const Navigate = () => {
    const pathname = usePathname()

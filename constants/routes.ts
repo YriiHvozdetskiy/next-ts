@@ -14,5 +14,9 @@ export const navRoutes = [
    {
       path: '/illustrations',
       name: 'Illustrations',
+   },
+   {
+      path: '/client-page',
+      name: 'Client page',
    }
 ]

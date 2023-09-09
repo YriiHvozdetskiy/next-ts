@@ -34,10 +34,10 @@ export async function generateMetadata({params}: { params: { id: string } }) {
 
 async function getIllustration(id: string) {
    const res = await fetch(`https://api.sciepro.sheep.fish/api/illustrations/${id}`, {
-      cache: 'no-store'
-      // next: {
-      //    revalidate: 0
-      // }
+      // cache: 'no-store'
+      next: {
+         revalidate: 60
+      }
    })
 
    if (!res.ok) {

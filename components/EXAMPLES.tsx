@@ -1,9 +1,11 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
+import Link from "next/link";
 
 import {Button} from "@/components/ui/button";
 import {FormCustom} from "@/components/FormCustom";
+import {RadioGroupDemo} from "@/components/RadioGroupDemo";
 
 // передаєм любі пропси, скільки хочем
 // <EXAMPLES age={0} title={'hello'}/>
@@ -27,21 +29,14 @@ export const EXAMPLES = ({title}: Props) => {
    //в стейті може бути тільки ці значення
    const [user, setUser] = useState<Pick<User, 'name' | 'email'>>({name: 'John', email: 'gmail'});
 
-   const fetchData = async (id: number) => {
-      const res = await fetch(`https://api.sciepro.sheep.fish/api/illustrations/${id}`);
-      const data = await res.json();
-      console.log('data',data)
-   }
-
-
-   useEffect(() => {
-      fetchData(1)
-   }, []);
-
    return (
       <>
          <div>{title}</div>
          <FormCustom/>
+         <RadioGroupDemo/>
+         <Button asChild>
+            <Link href={'/examples/1'}>link to slug element with suspense</Link>
+         </Button>
       </>
    );
 };
