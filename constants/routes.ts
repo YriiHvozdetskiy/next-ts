@@ -1,22 +1,22 @@
 export const navRoutes = [
    {
-      path: '/',
       name: 'Dashboard',
+      path: '/',
    },
    {
-      path: '/about',
       name: 'About',
+      path: '/about',
    },
    {
-      path: '/examples',
       name: 'Examples',
+      path: '/examples',
    },
    {
-      path: '/illustrations',
       name: 'Illustrations',
+      path: '/illustrations',
    },
    {
+      name: 'Client page (Suspense)',
       path: '/client-page',
-      name: 'Client page',
    }
 ]

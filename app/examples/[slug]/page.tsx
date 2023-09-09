@@ -9,7 +9,7 @@ import LoadingExamples from "@/app/examples/loading";
 import LoadingExamplesDetails from "@/app/examples/[slug]/loading";
 import {TextServer} from "@/components/TextServer";
 
-export default  function ExamplesDetails() {
+export default function ExamplesDetails() {
 
 
    return (
