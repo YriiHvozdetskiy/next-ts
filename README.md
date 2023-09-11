@@ -24,6 +24,8 @@ export default function EXAMPLES({title}: Props)
 - `Suspense` може бути "асинхрона серверна компонента" в якій можна робити фетч запит див. TextServer
   АЛЕ ТАК [НАДСИЛАЄТЬСЯ ТРИ ЗАПИТА (хз чого)] так краще не робити
 
+- axios.defaults.baseURL = 'https://api.sciepro.sheep.fish/api' - якщо записати базову url, то можна робити axios запити так: await axios.get(`/illustrations/${id}`)
+
 # zustand
 
 - в v5 не потрібно в кожній компоненті викликати `shallow` лише при створені
