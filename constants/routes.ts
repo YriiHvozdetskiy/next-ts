@@ -22,5 +22,9 @@ export const navRoutes = [
    {
       name: 'Tickets',
       path: '/tickets',
+   },
+   {
+      name: 'Search params',
+      path: '/search-params',
    }
 ]

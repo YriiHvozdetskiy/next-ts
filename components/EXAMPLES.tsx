@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import { FormCustom } from "@/components/FormCustom";
-import { RadioGroupDemo } from "@/components/RadioGroupDemo";
+import {Button} from "@/components/ui/button";
+import {FormCustom} from "@/components/FormCustom";
+import {RadioGroupDemo} from "@/components/RadioGroupDemo";
 
 // передаєм любі пропси, скільки хочем
 // <EXAMPLES age={0} title={'hello'}/>
@@ -25,15 +25,20 @@ type Action =
    | { type: 'decrement' };
 
 
-export const EXAMPLES = ({ title }: Props) => {
+export const EXAMPLES = ({title}: Props) => {
    //в стейті може бути тільки ці значення
-   const [user, setUser] = useState<Pick<User, 'name' | 'email'>>({ name: 'John', email: 'gmail' });
+   const [user, setUser] = useState<Pick<User, 'name' | 'email'>>({name: 'John', email: 'gmail'});
+
+
+   useEffect(() => {
+      fetch('test/')
+   }, []);
 
    return (
       <>
          <div>{title}</div>
-         <FormCustom />
-         <RadioGroupDemo />
+         <FormCustom/>
+         <RadioGroupDemo/>
          <Button asChild>
             <Link href={'/examples/1'}>link to slug element with suspense</Link>
          </Button>

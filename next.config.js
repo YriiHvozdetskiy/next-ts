@@ -2,7 +2,7 @@
 const nextConfig = {
    // щоб можна відображати картинки з інтернету по силці
    images: {
-      unoptimized: true,
+      // unoptimized: true,
    },
 }
 

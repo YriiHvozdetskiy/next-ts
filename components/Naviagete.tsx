@@ -10,14 +10,18 @@ export const Navigate = () => {
 
    return (
       <nav>
-         <ul className={'flex items-center space-x-[2rem]'}>
+         <ul className={'flex items-center gap-4 flex-wrap'}>
             {navRoutes.map((route) => {
                const isCurrent = pathname === route.path
 
                return (
                   <li key={route.path}>
-                     <Link className={`${isCurrent ? 'text-yellow-600' : ''} font-semibold`}
-                           href={route.path}>{route.name}</Link>
+                     <Link
+                        className={`${isCurrent ? 'text-yellow-600' : ''} font-semibold`}
+                        href={route.path}
+                     >
+                        {route.name}
+                     </Link>
                   </li>)
             })}
          </ul>
