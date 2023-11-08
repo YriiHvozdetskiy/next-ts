@@ -34,6 +34,8 @@ export const EXAMPLES = ({title}: Props) => {
       fetch('test/')
    }, []);
 
+
+   console.log('EXAMPLES')
    return (
       <>
          <div>{title}</div>
