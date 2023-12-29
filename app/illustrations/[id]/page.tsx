@@ -18,7 +18,8 @@ export async function generateMetadata({params}: { params: { id: string } }) {
       description: `${data?.data?.illustration?.short_description}`,
    }
 
-   /* ======= with axios ======= */
+
+   /* ======= with axios  no cache======= */
    // try {
    //    const {data} = await axios.get(`https://api.sciepro.sheep.fish/api/illustrations/${id}`)
    //   

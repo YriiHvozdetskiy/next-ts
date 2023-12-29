@@ -14,7 +14,7 @@ import {
 import {Modal} from "@/components/Modal";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
-import {useModalStore} from "@/stores";
+import {useModalStore} from "@/stores/useModalStore";
 
 interface Props {
 

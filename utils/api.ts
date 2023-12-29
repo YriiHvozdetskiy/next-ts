@@ -1,1 +1,0 @@
-export const api = 'тут  описуємо api'

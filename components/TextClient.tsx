@@ -1,8 +1,8 @@
 'use client'
 
 import {useEffect, useState} from "react";
+import {wait} from "@/utils/delay";
 
-import {wait} from "@/utils";
 
 export const TextClient = () => {
    const [isShow, setIsShow] = useState(false)

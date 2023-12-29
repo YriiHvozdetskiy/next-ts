@@ -1,8 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   // щоб можна відображати картинки з інтернету по силці
+   // reactStrictMode: true,
+   trailingSlash: true, // for refresh page
+   output: 'standalone',
+   experimental: {
+      appDir: true,
+   },
    images: {
-      // unoptimized: true,
+      unoptimized: true,
+      // formats: ['image/avif', 'image/webp'],
+      // unoptimized: false, //default false
+      // remotePatterns: [
+      //    {
+      //       protocol: 'https',
+      //       hostname: '**.sciepro.sheep.fish',
+      //       port: '',
+      //       pathname: '/storage/**',
+      //    },
+      // ],
    },
 }
 
