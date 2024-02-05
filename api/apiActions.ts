@@ -1,6 +1,6 @@
 import axios from "axios";
+import {apiRoutes} from "@/api/apiRoutes";
 
-import {apiRoutes} from "@/utils/apiRoutes";
 
 const apiActions = {
    fetchOrders: async (method: string, value = null, id = null) => {

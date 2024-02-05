@@ -1,5 +1,5 @@
-import {wait} from "@/utils";
 import axios from "axios";
+import {wait} from "@/utils/delay";
 
 export const TextServer = async ({id = 2}: { id?: number }) => {
    // with fetch. чомусь відбувається ТРИ фетча
